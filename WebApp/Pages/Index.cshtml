@@ -1,0 +1,113 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+ <form method="post"> 
+     
+                    
+                    @*<div class="col-md-6">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-info text-white" id="basic-addon1">
+                                    <i class="bi bi-calendar3"></i>
+                                </span>
+                            </div>
+
+                            Start Date: <input type="datetime" class="form-control"  name="startdate">
+
+                        </div>
+                    </div>*@
+
+                    @*<div class="col-md-6">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-info text-white" id="basic-addon1">
+                                    <i class="bi bi-calendar3"></i>
+                                </span>
+                            </div>
+
+                            End Date: <input type="datetime" class="form-control" name="enddate">
+                        </div>
+                    </div>*@
+
+                   @* <div class="col-md-12 text-center"">
+                        <button id="filter" class="btn btn-outline-info btn-sm">Filter Date</button>
+                        <button id="reset" class="btn btn-outline-warning btn-sm">Reset Date</button>
+                    </div>*@
+
+                
+                     Start Date: <input type="datetime" class="form-control" id="datepicker"  name="enddate">
+
+                     End Date: <input type="datetime" class="form-control" id="datepicker" name="startdate">
+
+                     <button id="filter" class="btn btn-outline-info btn-sm">Filter Date</button>
+
+                     <a asp-page="Index">All Data</a>
+
+
+                    <div class="row mt-3">
+
+                         <div class="col-md-12">
+                        
+                            <table class=" table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Gender</th>
+                                        <th>Dates</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach(var item in Model.results)
+                                    {
+                                        <tr>
+                                            <td> @item.Empid</td>
+                                            <td> @item.Empname</td>
+                                            <td> @item.Email</td>
+                                            <td> @item.Gender</td>
+                                            <td> @item.Joindate</td>
+                                        </tr>
+                                    }
+                                </tbody>
+
+                            </table>
+
+                        </div>
+                    </div>
+                   
+ </form>
+
+
+
+
+
+
+@*
+<table>
+    <thead>
+        <tr>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Dates</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.results)
+        {
+            <tr>
+                <td> @item.Empid</td>
+                <td> @item.Empname</td>
+                <td> @item.Email</td>
+                <td> @item.Gender</td>
+                <td> @item.Joindate</td>
+            </tr>
+        }
+    </tbody>
+</table>*@
